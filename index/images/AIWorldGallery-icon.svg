@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="gG" cx="42%" cy="38%" r="58%">
+      <stop offset="0%"   stop-color="#7ed62a"/>
+      <stop offset="45%"  stop-color="#4db81a"/>
+      <stop offset="100%" stop-color="#2a7a0a"/>
+    </radialGradient>
+    <radialGradient id="oG" cx="60%" cy="35%" r="55%">
+      <stop offset="0%"   stop-color="#ffaa33"/>
+      <stop offset="50%"  stop-color="#e86800"/>
+      <stop offset="100%" stop-color="#b84e00"/>
+    </radialGradient>
+    <linearGradient id="bG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#ffcc55"/>
+      <stop offset="100%" stop-color="#cc5500"/>
+    </linearGradient>
+    <filter id="sG">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <clipPath id="cG"><circle cx="100" cy="96" r="80"/></clipPath>
+  </defs>
+
+  <!-- White background circle -->
+  <circle cx="100" cy="100" r="100" fill="#f8f8f4"/>
+
+  <g filter="url(#sG)">
+    <!-- Globe base -->
+    <circle cx="100" cy="96" r="80" fill="url(#gG)"/>
+
+    <!-- Latitude / longitude grid lines -->
+    <g clip-path="url(#cG)" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.4">
+      <ellipse cx="100" cy="96" rx="80" ry="22"/>
+      <ellipse cx="100" cy="70"  rx="62" ry="14"/>
+      <ellipse cx="100" cy="122" rx="62" ry="14"/>
+      <ellipse cx="100" cy="44"  rx="36" ry="9"/>
+      <ellipse cx="100" cy="148" rx="36" ry="9"/>
+      <ellipse cx="100" cy="96" rx="28" ry="80"/>
+      <ellipse cx="100" cy="96" rx="60" ry="80"/>
+    </g>
+
+    <!-- Orange art hemisphere -->
+    <path d="M100,16 A80,80,0,0,1,100,176 Z" fill="url(#oG)" opacity="0.92"/>
+    <path d="M100,16 A80,80,0,0,1,100,176" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+
+    <!-- Circuit / AI nodes (green half) -->
+    <g fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="1.6" stroke-linecap="round">
+      <circle cx="56" cy="74"  r="5" fill="rgba(255,255,255,0.9)" stroke="none"/>
+      <line x1="61" y1="74"  x2="80" y2="74"/>
+      <circle cx="56" cy="96"  r="5" fill="rgba(255,255,255,0.9)" stroke="none"/>
+      <line x1="61" y1="96"  x2="84" y2="96"/>
+      <circle cx="56" cy="118" r="5" fill="rgba(255,255,255,0.9)" stroke="none"/>
+      <line x1="61" y1="118" x2="80" y2="112"/>
+      <line x1="56" y1="79"  x2="56" y2="91"/>
+      <line x1="56" y1="101" x2="56" y2="113"/>
+      <line x1="72" y1="74"  x2="72" y2="86"/>
+      <circle cx="72" cy="86" r="3.5" fill="rgba(255,255,255,0.7)" stroke="none"/>
+    </g>
+
+    <!-- Paintbrush (orange half) -->
+    <rect x="106" y="58" width="10" height="54" rx="4.5" fill="#8B3A00" transform="rotate(28,111,85)"/>
+    <rect x="106" y="82"  width="10" height="8"  rx="1.5" fill="#d4a030" transform="rotate(28,111,85)"/>
+    <ellipse cx="111" cy="60" rx="10" ry="18" fill="url(#bG)" transform="rotate(28,111,85)" opacity="0.95"/>
+    <ellipse cx="108" cy="55" rx="3.5" ry="10" fill="rgba(255,220,100,0.55)" transform="rotate(28,111,85)"/>
+
+    <!-- Color palette dots -->
+    <circle cx="142" cy="74" r="6" fill="#ff3333" opacity="0.9"/>
+    <circle cx="154" cy="90" r="6" fill="#3366ff" opacity="0.9"/>
+    <circle cx="144" cy="108" r="6" fill="#ffee00" opacity="0.9"/>
+    <circle cx="158" cy="60" r="4.5" fill="#fff" opacity="0.7"/>
+
+    <!-- Globe ring -->
+    <circle cx="100" cy="96" r="80" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.8"/>
+    <!-- Shadow base -->
+    <ellipse cx="100" cy="178" rx="62" ry="8" fill="rgba(0,0,0,0.18)"/>
+  </g>
+
+</svg>
