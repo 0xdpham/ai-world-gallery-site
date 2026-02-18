@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 200" width="520" height="200" font-family="Georgia, 'Times New Roman', serif">
+  <defs>
+
+    <!-- Globe green gradient -->
+    <radialGradient id="globeGrad" cx="42%" cy="38%" r="58%">
+      <stop offset="0%"   stop-color="#7ed62a"/>
+      <stop offset="45%"  stop-color="#4db81a"/>
+      <stop offset="100%" stop-color="#2a7a0a"/>
+    </radialGradient>
+
+    <!-- Orange arc / art side gradient -->
+    <radialGradient id="orangeGrad" cx="60%" cy="35%" r="55%">
+      <stop offset="0%"   stop-color="#ffaa33"/>
+      <stop offset="50%"  stop-color="#e86800"/>
+      <stop offset="100%" stop-color="#b84e00"/>
+    </radialGradient>
+
+    <!-- Brush stroke gradient -->
+    <linearGradient id="brushGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#ffcc55"/>
+      <stop offset="100%" stop-color="#cc5500"/>
+    </linearGradient>
+
+    <!-- Glow filter for globe -->
+    <filter id="globeGlow" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Subtle drop shadow -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+
+    <!-- Clip to circle for globe face -->
+    <clipPath id="globeClip">
+      <circle cx="96" cy="88" r="72"/>
+    </clipPath>
+
+    <!-- Palette circle clip -->
+    <clipPath id="paletteClip">
+      <circle cx="96" cy="88" r="72"/>
+    </clipPath>
+
+  </defs>
+
+  <!-- ═══════════════════════════════════════
+       MARK / ICON  (centered at ~96, 88)
+  ═══════════════════════════════════════ -->
+
+  <g filter="url(#shadow)">
+
+    <!-- ── Base globe circle ── -->
+    <circle cx="96" cy="88" r="72" fill="url(#globeGrad)"/>
+
+    <!-- ── Globe latitude lines (green side, clipped) ── -->
+    <g clip-path="url(#globeClip)" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.3">
+      <!-- Equator -->
+      <ellipse cx="96" cy="88" rx="72" ry="20"/>
+      <!-- Upper latitude -->
+      <ellipse cx="96" cy="65" rx="56" ry="13"/>
+      <!-- Lower latitude -->
+      <ellipse cx="96" cy="111" rx="56" ry="13"/>
+      <!-- High latitude -->
+      <ellipse cx="96" cy="44" rx="32" ry="8"/>
+      <ellipse cx="96" cy="132" rx="32" ry="8"/>
+      <!-- Meridians -->
+      <ellipse cx="96" cy="88" rx="26" ry="72"/>
+      <ellipse cx="96" cy="88" rx="55" ry="72"/>
+    </g>
+
+    <!-- ── Orange "art hemisphere" overlay (right half) ── -->
+    <path d="M96,16 A72,72,0,0,1,96,160 Z" fill="url(#orangeGrad)" opacity="0.92"/>
+
+    <!-- ── Dividing arc (bright highlight) ── -->
+    <path d="M96,16 A72,72,0,0,1,96,160" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="1.8"/>
+
+    <!-- ── Circuit nodes on the green half (tech / AI) ── -->
+    <g fill="none" stroke="rgba(255,255,255,0.70)" stroke-width="1.5" stroke-linecap="round">
+      <!-- Node 1 -->
+      <circle cx="62" cy="68" r="4.5" fill="rgba(255,255,255,0.85)" stroke="none"/>
+      <line x1="66" y1="68" x2="82" y2="68"/>
+      <!-- Node 2 -->
+      <circle cx="62" cy="88" r="4.5" fill="rgba(255,255,255,0.85)" stroke="none"/>
+      <line x1="66" y1="88" x2="85" y2="88"/>
+      <!-- Node 3 -->
+      <circle cx="62" cy="108" r="4.5" fill="rgba(255,255,255,0.85)" stroke="none"/>
+      <line x1="66" y1="108" x2="82" y2="104"/>
+      <!-- Connecting verticals -->
+      <line x1="62" y1="72" x2="62" y2="84"/>
+      <line x1="62" y1="92" x2="62" y2="104"/>
+      <!-- Small branch -->
+      <line x1="74" y1="68" x2="74" y2="78"/>
+      <circle cx="74" cy="78" r="3" fill="rgba(255,255,255,0.7)" stroke="none"/>
+    </g>
+
+    <!-- ── Paintbrush on the orange half ── -->
+    <!-- Brush handle -->
+    <rect x="100" y="55" width="9" height="48" rx="4" fill="#8B3A00" transform="rotate(30,104,79)"/>
+    <!-- Brush ferrule (metal band) -->
+    <rect x="100" y="76" width="9" height="7" rx="1" fill="#d4a030" transform="rotate(30,104,79)"/>
+    <!-- Brush bristles -->
+    <ellipse cx="104" cy="55" rx="9" ry="16" fill="url(#brushGrad)" transform="rotate(30,104,79)" opacity="0.95"/>
+    <!-- Bristle highlight -->
+    <ellipse cx="101" cy="51" rx="3" ry="9" fill="rgba(255,220,100,0.55)" transform="rotate(30,104,79)"/>
+
+    <!-- ── Color palette dots (art) ── -->
+    <circle cx="125" cy="70" r="5.5" fill="#ff3333" opacity="0.9"/>
+    <circle cx="136" cy="82" r="5.5" fill="#3366ff" opacity="0.9"/>
+    <circle cx="128" cy="96" r="5.5" fill="#ffee00" opacity="0.9"/>
+    <circle cx="142" cy="66" r="4"   fill="#ffffff"  opacity="0.7"/>
+
+    <!-- ── Globe outline ring ── -->
+    <circle cx="96" cy="88" r="72" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+
+    <!-- ── Ground/shadow base ── -->
+    <ellipse cx="96" cy="163" rx="56" ry="7" fill="rgba(0,0,0,0.18)"/>
+
+  </g>
+
+  <!-- ═══════════════════════════════════════
+       WORDMARK
+  ═══════════════════════════════════════ -->
+
+  <!-- "AI" in green -->
+  <text x="186" y="76"
+        font-family="'Georgia', serif"
+        font-size="54"
+        font-weight="700"
+        letter-spacing="-1"
+        fill="#3db01a">AI</text>
+
+  <!-- "World" in dark charcoal with green undertone -->
+  <text x="238" y="76"
+        font-family="'Georgia', serif"
+        font-size="54"
+        font-weight="700"
+        letter-spacing="-1"
+        fill="#1a3a0a">World</text>
+
+  <!-- "Gallery" in orange -->
+  <text x="186" y="134"
+        font-family="'Georgia', serif"
+        font-size="54"
+        font-weight="700"
+        letter-spacing="-1"
+        fill="#e86800">Gallery</text>
+
+  <!-- ".com" small superscript-style -->
+  <text x="456" y="108"
+        font-family="'Georgia', serif"
+        font-size="19"
+        font-weight="400"
+        fill="#888"
+        letter-spacing="0.5">.com</text>
+
+  <!-- Tagline -->
+  <text x="187" y="158"
+        font-family="Georgia, serif"
+        font-size="13"
+        font-style="italic"
+        letter-spacing="2.5"
+        fill="#5a7a4a">Where AI Art Meets the World</text>
+
+</svg>
